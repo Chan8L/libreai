@@ -1,0 +1,616 @@
+   1	<!DOCTYPE html>
+     2	<html lang="ja">
+     3	<head>
+     4	    <meta charset="UTF-8">
+     5	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6	    <meta name="description" content="LibreAI - AI時代のノウハウが集まる場所。AIプロンプト、ノウハウ、講座の売買とコミュニティ。ChatGPT、Midjourney、Gemini等のAIツール活用法を学び、収益化しよう。">
+     7	    <meta name="keywords" content="AI, プロンプト, ノウハウ, 売買, マーケットプレイス, コミュニティ, ChatGPT, Midjourney, Gemini, Claude, 副業, 収益化">
+     8	    <meta name="author" content="LibreAI">
+     9	    
+    10	    <!-- OGP設定（SNSシェア用） -->
+    11	    <meta property="og:title" content="LibreAI - AI時代のノウハウが集まる場所">
+    12	    <meta property="og:description" content="AIプロンプト、ノウハウ、講座の売買とコミュニティ。日本最大級のAI特化型マーケットプラットフォーム。">
+    13	    <meta property="og:type" content="website">
+    14	    <meta property="og:url" content="https://libreai.com/">
+    15	    <meta property="og:image" content="https://libreai.com/images/og-image.png">
+    16	    <meta property="og:site_name" content="LibreAI">
+    17	    
+    18	    <!-- Twitter Card -->
+    19	    <meta name="twitter:card" content="summary_large_image">
+    20	    <meta name="twitter:site" content="@LibreAI_JP">
+    21	    <meta name="twitter:title" content="LibreAI - AI時代のノウハウが集まる場所">
+    22	    <meta name="twitter:description" content="AIプロンプト、ノウハウ、講座の売買とコミュニティ">
+    23	    <meta name="twitter:image" content="https://libreai.com/images/og-image.png">
+    24	    
+    25	    <!-- 構造化データ（JSON-LD） -->
+    26	    <script type="application/ld+json">
+    27	    {
+    28	      "@context": "https://schema.org",
+    29	      "@type": "WebSite",
+    30	      "name": "LibreAI",
+    31	      "url": "https://libreai.com/",
+    32	      "description": "AI時代のノウハウが集まる場所",
+    33	      "potentialAction": {
+    34	        "@type": "SearchAction",
+    35	        "target": "https://libreai.com/marketplace.html?search={search_term_string}",
+    36	        "query-input": "required name=search_term_string"
+    37	      }
+    38	    }
+    39	    </script>
+    40	    
+    41	    <title>LibreAI - AI時代のノウハウが集まる場所 | AIプロンプト・ノウハウ売買</title>
+    42	    <link rel="canonical" href="https://libreai.com/">
+    43	    <link rel="stylesheet" href="style.css">
+    44	    <link rel="preconnect" href="https://fonts.googleapis.com">
+    45	    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    46	    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    47	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    48	</head>
+    49	<body>
+    50	    <!-- ヘッダー -->
+    51	    <header class="header">
+    52	        <div class="container">
+    53	            <nav class="nav">
+    54	                <div class="nav-left">
+    55	                    <a href="index.html" class="logo">
+    56	                        <i class="fas fa-brain"></i>
+    57	                        <span>LibreAI</span>
+    58	                    </a>
+    59	                </div>
+    60	                <div class="nav-center">
+    61	                    <div class="search-bar">
+    62	                        <i class="fas fa-search"></i>
+    63	                        <input type="text" placeholder="AIプロンプト、ノウハウを検索...">
+    64	                    </div>
+    65	                    <a href="post.html" class="btn-post">
+    66	                        <i class="fas fa-plus"></i>
+    67	                        投稿する
+    68	                    </a>
+    69	                </div>
+    70	                <div class="nav-right">
+    71	                    <a href="marketplace.html" class="nav-link">マーケット</a>
+    72	                    <a href="prompts.html" class="nav-link">プロンプト</a>
+    73	                    <a href="community.html" class="nav-link">コミュニティ</a>
+    74	                    <a href="payment-methods.html" class="nav-link">決済方法</a>
+    75	                    <a href="#" class="nav-icon" title="お気に入り">
+    76	                        <i class="far fa-heart"></i>
+    77	                    </a>
+    78	                    <a href="checkout.html" class="nav-icon" title="カート">
+    79	                        <i class="fas fa-shopping-cart"></i>
+    80	                        <span class="badge">0</span>
+    81	                    </a>
+    82	                    <a href="#" class="btn-primary">ログイン</a>
+    83	                </div>
+    84	                <button class="mobile-menu-btn">
+    85	                    <i class="fas fa-bars"></i>
+    86	                </button>
+    87	            </nav>
+    88	        </div>
+    89	    </header>
+    90	
+    91	    <!-- ヒーローセクション -->
+    92	    <section class="hero">
+    93	        <div class="hero-bg"></div>
+    94	        <div class="container">
+    95	            <div class="hero-content">
+    96	                <h1 class="hero-title">AI時代のノウハウが<br>集まる場所</h1>
+    97	                <p class="hero-subtitle">プロンプト、ノウハウ、講座を売買し、<br>コミュニティで学び合う統合プラットフォーム</p>
+    98	                <div class="hero-actions">
+    99	                    <a href="marketplace.html" class="btn-hero-primary">
+   100	                        <i class="fas fa-store"></i> マーケットを見る
+   101	                    </a>
+   102	                    <a href="#categories" class="btn-hero-secondary">
+   103	                        <i class="fas fa-compass"></i> カテゴリーを探す
+   104	                    </a>
+   105	                </div>
+   106	                <div class="hero-stats">
+   107	                    <div class="stat">
+   108	                        <div class="stat-number">10,000+</div>
+   109	                        <div class="stat-label">商品数</div>
+   110	                    </div>
+   111	                    <div class="stat">
+   112	                        <div class="stat-number">5,000+</div>
+   113	                        <div class="stat-label">ユーザー</div>
+   114	                    </div>
+   115	                    <div class="stat">
+   116	                        <div class="stat-number">500+</div>
+   117	                        <div class="stat-label">コミュニティ</div>
+   118	                    </div>
+   119	                </div>
+   120	            </div>
+   121	        </div>
+   122	    </section>
+   123	
+   124	    <!-- 人気カテゴリー -->
+   125	    <section id="categories" class="categories">
+   126	        <div class="container">
+   127	            <div class="section-header">
+   128	                <h2 class="section-title">人気カテゴリー</h2>
+   129	                <a href="marketplace.html" class="section-link">すべて見る <i class="fas fa-arrow-right"></i></a>
+   130	            </div>
+   131	            <div class="category-grid">
+   132	                <a href="prompts.html" class="category-card">
+   133	                    <div class="category-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+   134	                        <i class="fas fa-comments"></i>
+   135	                    </div>
+   136	                    <h3 class="category-title">AIプロンプト</h3>
+   137	                    <p class="category-count">3,500+ 商品</p>
+   138	                    <div class="category-tags">
+   139	                        <span class="tag">ChatGPT</span>
+   140	                        <span class="tag">Midjourney</span>
+   141	                        <span class="tag">Gemini</span>
+   142	                    </div>
+   143	                </a>
+   144	                <a href="marketplace.html?category=knowhow" class="category-card">
+   145	                    <div class="category-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+   146	                        <i class="fas fa-lightbulb"></i>
+   147	                    </div>
+   148	                    <h3 class="category-title">ノウハウ・Tips</h3>
+   149	                    <p class="category-count">2,800+ 商品</p>
+   150	                    <div class="category-tags">
+   151	                        <span class="tag">PDF</span>
+   152	                        <span class="tag">動画</span>
+   153	                        <span class="tag">記事</span>
+   154	                    </div>
+   155	                </a>
+   156	                <a href="marketplace.html?category=course" class="category-card">
+   157	                    <div class="category-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+   158	                        <i class="fas fa-graduation-cap"></i>
+   159	                    </div>
+   160	                    <h3 class="category-title">オンライン講座</h3>
+   161	                    <p class="category-count">1,200+ 講座</p>
+   162	                    <div class="category-tags">
+   163	                        <span class="tag">初心者</span>
+   164	                        <span class="tag">中級</span>
+   165	                        <span class="tag">上級</span>
+   166	                    </div>
+   167	                </a>
+   168	                <a href="marketplace.html?category=service" class="category-card">
+   169	                    <div class="category-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+   170	                        <i class="fas fa-cogs"></i>
+   171	                    </div>
+   172	                    <h3 class="category-title">カスタムサービス</h3>
+   173	                    <p class="category-count">900+ サービス</p>
+   174	                    <div class="category-tags">
+   175	                        <span class="tag">設定代行</span>
+   176	                        <span class="tag">コンサル</span>
+   177	                        <span class="tag">制作</span>
+   178	                    </div>
+   179	                </a>
+   180	            </div>
+   181	        </div>
+   182	    </section>
+   183	
+   184	    <!-- 人気商品 -->
+   185	    <section class="products">
+   186	        <div class="container">
+   187	            <div class="section-header">
+   188	                <h2 class="section-title">人気の商品</h2>
+   189	                <a href="marketplace.html" class="section-link">すべて見る <i class="fas fa-arrow-right"></i></a>
+   190	            </div>
+   191	            <div class="product-grid">
+   192	                <div class="product-card">
+   193	                    <div class="product-image">
+   194	                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop" alt="ChatGPT最強プロンプト集">
+   195	                        <span class="product-badge hot">人気</span>
+   196	                        <button class="product-favorite">
+   197	                            <i class="far fa-heart"></i>
+   198	                        </button>
+   199	                    </div>
+   200	                    <div class="product-content">
+   201	                        <div class="product-category">
+   202	                            <i class="fas fa-comments"></i> プロンプト
+   203	                        </div>
+   204	                        <h3 class="product-title">ChatGPT最強プロンプト集 100選</h3>
+   205	                        <div class="product-rating">
+   206	                            <i class="fas fa-star"></i>
+   207	                            <i class="fas fa-star"></i>
+   208	                            <i class="fas fa-star"></i>
+   209	                            <i class="fas fa-star"></i>
+   210	                            <i class="fas fa-star"></i>
+   211	                            <span class="rating-count">(248)</span>
+   212	                        </div>
+   213	                        <div class="product-author">
+   214	                            <img src="https://i.pravatar.cc/40?img=1" alt="Author">
+   215	                            <span>AI Master</span>
+   216	                        </div>
+   217	                        <div class="product-footer">
+   218	                            <div class="product-price">¥1,980</div>
+   219	                            <button class="btn-buy" onclick="addToCart(1)">
+   220	                                <i class="fas fa-shopping-cart"></i> 購入
+   221	                            </button>
+   222	                        </div>
+   223	                    </div>
+   224	                </div>
+   225	
+   226	                <div class="product-card">
+   227	                    <div class="product-image">
+   228	                        <img src="https://images.unsplash.com/photo-1686191128892-c18ee1b4d3eb?w=400&h=300&fit=crop" alt="Midjourney画像生成">
+   229	                        <span class="product-badge new">新着</span>
+   230	                        <button class="product-favorite">
+   231	                            <i class="far fa-heart"></i>
+   232	                        </button>
+   233	                    </div>
+   234	                    <div class="product-content">
+   235	                        <div class="product-category">
+   236	                            <i class="fas fa-image"></i> プロンプト
+   237	                        </div>
+   238	                        <h3 class="product-title">Midjourney 画像生成プロンプト集</h3>
+   239	                        <div class="product-rating">
+   240	                            <i class="fas fa-star"></i>
+   241	                            <i class="fas fa-star"></i>
+   242	                            <i class="fas fa-star"></i>
+   243	                            <i class="fas fa-star"></i>
+   244	                            <i class="fas fa-star-half-alt"></i>
+   245	                            <span class="rating-count">(156)</span>
+   246	                        </div>
+   247	                        <div class="product-author">
+   248	                            <img src="https://i.pravatar.cc/40?img=2" alt="Author">
+   249	                            <span>Design Pro</span>
+   250	                        </div>
+   251	                        <div class="product-footer">
+   252	                            <div class="product-price">¥2,480</div>
+   253	                            <button class="btn-buy" onclick="addToCart(2)">
+   254	                                <i class="fas fa-shopping-cart"></i> 購入
+   255	                            </button>
+   256	                        </div>
+   257	                    </div>
+   258	                </div>
+   259	
+   260	                <div class="product-card">
+   261	                    <div class="product-image">
+   262	                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&h=300&fit=crop" alt="AI副業完全ガイド">
+   263	                        <span class="product-badge">おすすめ</span>
+   264	                        <button class="product-favorite">
+   265	                            <i class="far fa-heart"></i>
+   266	                        </button>
+   267	                    </div>
+   268	                    <div class="product-content">
+   269	                        <div class="product-category">
+   270	                            <i class="fas fa-lightbulb"></i> ノウハウ
+   271	                        </div>
+   272	                        <h3 class="product-title">AI副業完全ガイド【月15万円達成】</h3>
+   273	                        <div class="product-rating">
+   274	                            <i class="fas fa-star"></i>
+   275	                            <i class="fas fa-star"></i>
+   276	                            <i class="fas fa-star"></i>
+   277	                            <i class="fas fa-star"></i>
+   278	                            <i class="fas fa-star"></i>
+   279	                            <span class="rating-count">(342)</span>
+   280	                        </div>
+   281	                        <div class="product-author">
+   282	                            <img src="https://i.pravatar.cc/40?img=3" alt="Author">
+   283	                            <span>副業マスター</span>
+   284	                        </div>
+   285	                        <div class="product-footer">
+   286	                            <div class="product-price">¥3,980</div>
+   287	                            <button class="btn-buy" onclick="addToCart(3)">
+   288	                                <i class="fas fa-shopping-cart"></i> 購入
+   289	                            </button>
+   290	                        </div>
+   291	                    </div>
+   292	                </div>
+   293	
+   294	                <div class="product-card">
+   295	                    <div class="product-image">
+   296	                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop" alt="ChatGPT活用講座">
+   297	                        <button class="product-favorite">
+   298	                            <i class="far fa-heart"></i>
+   299	                        </button>
+   300	                    </div>
+   301	                    <div class="product-content">
+   302	                        <div class="product-category">
+   303	                            <i class="fas fa-graduation-cap"></i> 講座
+   304	                        </div>
+   305	                        <h3 class="product-title">ChatGPT実践活用講座（全10回）</h3>
+   306	                        <div class="product-rating">
+   307	                            <i class="fas fa-star"></i>
+   308	                            <i class="fas fa-star"></i>
+   309	                            <i class="fas fa-star"></i>
+   310	                            <i class="fas fa-star"></i>
+   311	                            <i class="fas fa-star"></i>
+   312	                            <span class="rating-count">(189)</span>
+   313	                        </div>
+   314	                        <div class="product-author">
+   315	                            <img src="https://i.pravatar.cc/40?img=4" alt="Author">
+   316	                            <span>AI講師</span>
+   317	                        </div>
+   318	                        <div class="product-footer">
+   319	                            <div class="product-price">¥9,800</div>
+   320	                            <button class="btn-buy" onclick="addToCart(4)">
+   321	                                <i class="fas fa-shopping-cart"></i> 購入
+   322	                            </button>
+   323	                        </div>
+   324	                    </div>
+   325	                </div>
+   326	            </div>
+   327	        </div>
+   328	    </section>
+   329	
+   330	    <!-- コミュニティセクション -->
+   331	    <section class="community-preview">
+   332	        <div class="container">
+   333	            <div class="section-header">
+   334	                <h2 class="section-title">活発なコミュニティ</h2>
+   335	                <a href="community.html" class="section-link">すべて見る <i class="fas fa-arrow-right"></i></a>
+   336	            </div>
+   337	            <div class="community-grid">
+   338	                <a href="community.html" class="community-card">
+   339	                    <div class="community-cover">
+   340	                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=200&fit=crop" alt="ChatGPTマスターズ">
+   341	                    </div>
+   342	                    <div class="community-content">
+   343	                        <div class="community-header">
+   344	                            <div class="community-icon">
+   345	                                <i class="fas fa-comments"></i>
+   346	                            </div>
+   347	                            <div class="community-status">
+   348	                                <span class="status-dot"></span>
+   349	                                <span>3,240人がオンライン</span>
+   350	                            </div>
+   351	                        </div>
+   352	                        <h3 class="community-title">ChatGPTマスターズ</h3>
+   353	                        <p class="community-description">ChatGPTの活用法を共有し、学び合うコミュニティ</p>
+   354	                        <div class="community-stats">
+   355	                            <div class="stat-item">
+   356	                                <i class="fas fa-users"></i>
+   357	                                <span>12,450人</span>
+   358	                            </div>
+   359	                            <div class="stat-item">
+   360	                                <i class="fas fa-comments"></i>
+   361	                                <span>24,890件</span>
+   362	                            </div>
+   363	                        </div>
+   364	                    </div>
+   365	                </a>
+   366	
+   367	                <a href="community.html" class="community-card">
+   368	                    <div class="community-cover">
+   369	                        <img src="https://images.unsplash.com/photo-1686191128892-c18ee1b4d3eb?w=600&h=200&fit=crop" alt="画像生成AI研究所">
+   370	                    </div>
+   371	                    <div class="community-content">
+   372	                        <div class="community-header">
+   373	                            <div class="community-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+   374	                                <i class="fas fa-image"></i>
+   375	                            </div>
+   376	                            <div class="community-status">
+   377	                                <span class="status-dot"></span>
+   378	                                <span>1,890人がオンライン</span>
+   379	                            </div>
+   380	                        </div>
+   381	                        <h3 class="community-title">画像生成AI研究所</h3>
+   382	                        <p class="community-description">Midjourney、Stable Diffusion等の画像生成AIコミュニティ</p>
+   383	                        <div class="community-stats">
+   384	                            <div class="stat-item">
+   385	                                <i class="fas fa-users"></i>
+   386	                                <span>8,320人</span>
+   387	                            </div>
+   388	                            <div class="stat-item">
+   389	                                <i class="fas fa-comments"></i>
+   390	                                <span>15,240件</span>
+   391	                            </div>
+   392	                        </div>
+   393	                    </div>
+   394	                </a>
+   395	
+   396	                <a href="community.html" class="community-card">
+   397	                    <div class="community-cover">
+   398	                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&h=200&fit=crop" alt="AI副業ラボ">
+   399	                    </div>
+   400	                    <div class="community-content">
+   401	                        <div class="community-header">
+   402	                            <div class="community-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+   403	                                <i class="fas fa-coins"></i>
+   404	                            </div>
+   405	                            <div class="community-status">
+   406	                                <span class="status-dot"></span>
+   407	                                <span>2,560人がオンライン</span>
+   408	                            </div>
+   409	                        </div>
+   410	                        <h3 class="community-title">AI副業ラボ</h3>
+   411	                        <p class="community-description">AIを使った副業・収益化のノウハウ共有</p>
+   412	                        <div class="community-stats">
+   413	                            <div class="stat-item">
+   414	                                <i class="fas fa-users"></i>
+   415	                                <span>15,680人</span>
+   416	                            </div>
+   417	                            <div class="stat-item">
+   418	                                <i class="fas fa-comments"></i>
+   419	                                <span>32,450件</span>
+   420	                            </div>
+   421	                        </div>
+   422	                    </div>
+   423	                </a>
+   424	            </div>
+   425	        </div>
+   426	    </section>
+   427	
+   428	    <!-- 最新記事 -->
+   429	    <section class="articles">
+   430	        <div class="container">
+   431	            <div class="section-header">
+   432	                <h2 class="section-title">最新記事</h2>
+   433	                <a href="#" class="section-link">すべて見る <i class="fas fa-arrow-right"></i></a>
+   434	            </div>
+   435	            <div class="article-grid">
+   436	                <article class="article-card">
+   437	                    <div class="article-image">
+   438	                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop" alt="ChatGPT活用法">
+   439	                    </div>
+   440	                    <div class="article-content">
+   441	                        <div class="article-meta">
+   442	                            <span class="article-category">ノウハウ</span>
+   443	                            <span class="article-date">2026/01/02</span>
+   444	                        </div>
+   445	                        <h3 class="article-title">ChatGPTで業務効率を3倍にする10の方法</h3>
+   446	                        <p class="article-excerpt">ビジネスシーンで即実践できるChatGPT活用術を徹底解説。メール作成からデータ分析まで...</p>
+   447	                        <div class="article-author">
+   448	                            <img src="https://i.pravatar.cc/32?img=5" alt="Author">
+   449	                            <div>
+   450	                                <div class="author-name">田中太郎</div>
+   451	                                <div class="author-stats">
+   452	                                    <i class="fas fa-eye"></i> 12,450
+   453	                                    <i class="fas fa-heart"></i> 248
+   454	                                </div>
+   455	                            </div>
+   456	                        </div>
+   457	                    </div>
+   458	                </article>
+   459	
+   460	                <article class="article-card">
+   461	                    <div class="article-image">
+   462	                        <img src="https://images.unsplash.com/photo-1686191128892-c18ee1b4d3eb?w=400&h=250&fit=crop" alt="Midjourney">
+   463	                    </div>
+   464	                    <div class="article-content">
+   465	                        <div class="article-meta">
+   466	                            <span class="article-category">チュートリアル</span>
+   467	                            <span class="article-date">2026/01/01</span>
+   468	                        </div>
+   469	                        <h3 class="article-title">Midjourney V6の新機能を使いこなす</h3>
+   470	                        <p class="article-excerpt">最新バージョンで追加された強力な機能を詳しく紹介。画像生成のクオリティが劇的に向上...</p>
+   471	                        <div class="article-author">
+   472	                            <img src="https://i.pravatar.cc/32?img=6" alt="Author">
+   473	                            <div>
+   474	                                <div class="author-name">佐藤花子</div>
+   475	                                <div class="author-stats">
+   476	                                    <i class="fas fa-eye"></i> 8,920
+   477	                                    <i class="fas fa-heart"></i> 156
+   478	                                </div>
+   479	                            </div>
+   480	                        </div>
+   481	                    </div>
+   482	                </article>
+   483	
+   484	                <article class="article-card">
+   485	                    <div class="article-image">
+   486	                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&h=250&fit=crop" alt="AI副業">
+   487	                    </div>
+   488	                    <div class="article-content">
+   489	                        <div class="article-meta">
+   490	                            <span class="article-category">副業</span>
+   491	                            <span class="article-date">2025/12/30</span>
+   492	                        </div>
+   493	                        <h3 class="article-title">【実録】AIで月10万円稼いだ方法を全公開</h3>
+   494	                        <p class="article-excerpt">3ヶ月で月10万円の副業収入を達成した具体的な手法とツールを包み隠さず紹介します...</p>
+   495	                        <div class="article-author">
+   496	                            <img src="https://i.pravatar.cc/32?img=7" alt="Author">
+   497	                            <div>
+   498	                                <div class="author-name">山田次郎</div>
+   499	                                <div class="author-stats">
+   500	                                    <i class="fas fa-eye"></i> 15,680
+   501	                                    <i class="fas fa-heart"></i> 342
+   502	                                </div>
+   503	                            </div>
+   504	                        </div>
+   505	                    </div>
+   506	                </article>
+   507	            </div>
+   508	        </div>
+   509	    </section>
+   510	
+   511	    <!-- CTA セクション -->
+   512	    <section class="cta">
+   513	        <div class="container">
+   514	            <div class="cta-content">
+   515	                <h2 class="cta-title">今すぐ始めよう</h2>
+   516	                <p class="cta-subtitle">LibreAIで新しいAI時代の可能性を開こう</p>
+   517	                <div class="cta-buttons">
+   518	                    <a href="#" class="btn-cta-primary">無料で始める</a>
+   519	                    <a href="marketplace.html" class="btn-cta-secondary">商品を見る</a>
+   520	                </div>
+   521	            </div>
+   522	        </div>
+   523	    </section>
+   524	
+   525	    <!-- フッター -->
+   526	    <footer class="footer">
+   527	        <div class="container">
+   528	            <div class="footer-content">
+   529	                <div class="footer-col">
+   530	                    <div class="footer-logo">
+   531	                        <i class="fas fa-brain"></i>
+   532	                        <span>LibreAI</span>
+   533	                    </div>
+   534	                    <p class="footer-description">AI時代のノウハウが集まる場所。プロンプト、ノウハウ、講座の売買とコミュニティ統合プラットフォーム。</p>
+   535	                    <div class="footer-social">
+   536	                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+   537	                        <a href="#" title="Discord"><i class="fab fa-discord"></i></a>
+   538	                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+   539	                        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+   540	                    </div>
+   541	                </div>
+   542	                <div class="footer-col">
+   543	                    <h4 class="footer-title">マーケット</h4>
+   544	                    <ul class="footer-links">
+   545	                        <li><a href="prompts.html">AIプロンプト</a></li>
+   546	                        <li><a href="marketplace.html?category=knowhow">ノウハウ・Tips</a></li>
+   547	                        <li><a href="marketplace.html?category=course">オンライン講座</a></li>
+   548	                        <li><a href="marketplace.html?category=service">カスタムサービス</a></li>
+   549	                    </ul>
+   550	                </div>
+   551	                <div class="footer-col">
+   552	                    <h4 class="footer-title">コミュニティ</h4>
+   553	                    <ul class="footer-links">
+   554	                        <li><a href="community.html">グループ一覧</a></li>
+   555	                        <li><a href="community.html">人気のグループ</a></li>
+   556	                        <li><a href="community.html">グループを作成</a></li>
+   557	                        <li><a href="#">イベント</a></li>
+   558	                    </ul>
+   559	                </div>
+   560	                <div class="footer-col">
+   561	                    <h4 class="footer-title">サポート</h4>
+   562	                    <ul class="footer-links">
+   563	                        <li><a href="payment-methods.html">決済方法</a></li>
+   564	                        <li><a href="#">ヘルプセンター</a></li>
+   565	                        <li><a href="#">よくある質問</a></li>
+   566	                        <li><a href="#">お問い合わせ</a></li>
+   567	                        <li><a href="#">出品者ガイド</a></li>
+   568	                    </ul>
+   569	                </div>
+   570	                <div class="footer-col">
+   571	                    <h4 class="footer-title">会社情報</h4>
+   572	                    <ul class="footer-links">
+   573	                        <li><a href="#">LibreAIについて</a></li>
+   574	                        <li><a href="#">利用規約</a></li>
+   575	                        <li><a href="#">プライバシーポリシー</a></li>
+   576	                        <li><a href="#">特定商取引法</a></li>
+   577	                    </ul>
+   578	                </div>
+   579	            </div>
+   580	            <div class="footer-bottom">
+   581	                <p>&copy; 2026 LibreAI. All rights reserved.</p>
+   582	                <div class="footer-badges">
+   583	                    <img src="https://img.shields.io/badge/SSL-Secure-green" alt="SSL Secure">
+   584	                    <img src="https://img.shields.io/badge/Payment-Stripe-blue" alt="Stripe">
+   585	                </div>
+   586	            </div>
+   587	        </div>
+   588	    </footer>
+   589	
+   590	    <!-- モバイルボトムナビ -->
+   591	    <nav class="mobile-bottom-nav">
+   592	        <a href="index.html" class="mobile-nav-item active">
+   593	            <i class="fas fa-home"></i>
+   594	            <span>ホーム</span>
+   595	        </a>
+   596	        <a href="marketplace.html" class="mobile-nav-item">
+   597	            <i class="fas fa-store"></i>
+   598	            <span>マーケット</span>
+   599	        </a>
+   600	        <a href="prompts.html" class="mobile-nav-item">
+   601	            <i class="fas fa-comments"></i>
+   602	            <span>プロンプト</span>
+   603	        </a>
+   604	        <a href="community.html" class="mobile-nav-item">
+   605	            <i class="fas fa-users"></i>
+   606	            <span>コミュニティ</span>
+   607	        </a>
+   608	        <a href="#" class="mobile-nav-item">
+   609	            <i class="fas fa-user"></i>
+   610	            <span>マイページ</span>
+   611	        </a>
+   612	    </nav>
+   613	
+   614	    <script src="script.js"></script>
+   615	</body>
+   616	</html>
